@@ -17,7 +17,6 @@ const deleteNonConfigurable = (object, property) => {
     // function that deletes a property from the object if the property is configurable
     if(object.hasOwnProperty(property)){    // checking if the property exists in the object
         if(Object.getOwnPropertyDescriptor(object, property).configurable){ // checking if the property is configurable
-            console.log("23424")
             delete object[property];    // deleting the property
         }
         else{
@@ -25,18 +24,4 @@ const deleteNonConfigurable = (object, property) => {
         }
     }
 }
-// console.log(getTotalPrice(product))
-
-// product.description = "Lorem Ipsum"
-// Object.defineProperty(product, 'description', {
-//     configurable: false
-// } )
-// product.toDelete = "123"
-// console.log(product)
-// deleteNonConfigurable(product, 'toDelete')
-// console.log(product)
-// deleteNonConfigurable(product, 'nim2')
-// console.log(product)
-// deleteNonConfigurable(product, 'description')
-// console.log(product)
 
