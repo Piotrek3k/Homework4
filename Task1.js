@@ -10,7 +10,7 @@ Object.defineProperties(person, { firstName: {writable: false},  lastName: {writ
 
 person.updateInfo = function (info) {
     // updating person object
-    for (var key in info) {
+    for (let key in info) {
       // trying to update every key in info
       if(this.hasOwnProperty(key))
       {
@@ -18,7 +18,7 @@ person.updateInfo = function (info) {
           console.log(`${key} property is not writable`)  // if property is not writable
         }
         else{
-          this[key] = info[key]  
+          this[key] = info[key]  // updating key
         }
       }
     }
