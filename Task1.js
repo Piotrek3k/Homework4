@@ -1,4 +1,4 @@
-let person = {  
+const person = {  
     firstName: "John",
     lastName: "Doe",
     age: 30,
@@ -9,18 +9,19 @@ Object.defineProperties(person, { firstName: {writable: false},  lastName: {writ
 // making the properties read-only and not writable
 
 person.updateInfo = function (info) {
+    for (let key in info) {
+      Object.defineProperty(person, key, {writable: true})  // defining properties as writable
+    }
     // updating person object
     for (let key in info) {
       // trying to update every key in info
       if(this.hasOwnProperty(key))
       {
-        if (!Object.getOwnPropertyDescriptor(this, key).writable) {
-          console.log(`${key} property is not writable`)  // if property is not writable
-        }
-        else{
           this[key] = info[key]  // updating key
-        }
       }
+    }
+    for (let key in info) {
+      Object.defineProperty(person, key, {writable: true}) // defining properties as non-writable
     }
     return(this)
 }
@@ -28,10 +29,10 @@ person.updateInfo = function (info) {
 Object.defineProperty(person, "address", {
   value: {},
   configurable: false,
-  writable: false,
+  enumerable: false,
 })
 
-let info = {
+const info = {
     firstName: "Jane",
     lastName: "Smith",
     age: 23,

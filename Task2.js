@@ -1,4 +1,4 @@
-let product = {
+const product = {
     name: "Laptop",
     price: 1000,
     quantity: 5

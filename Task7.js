@@ -31,7 +31,7 @@ const validateObject = (object, schema) => {
     return true;    // if all conditions are met, the object is validated and function returns true
 }
 
-let person1 = {  
+const person1 = {  
     firstName: "John",
     lastName: "Doe",
     age: 30,

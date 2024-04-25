@@ -22,7 +22,7 @@ const observeObject = (object, callbackFunction) => {
       return proxy;
 }
 
-let person = {  
+const person = {  
     firstName: "John",
     lastName: "Doe",
     age: 30,
